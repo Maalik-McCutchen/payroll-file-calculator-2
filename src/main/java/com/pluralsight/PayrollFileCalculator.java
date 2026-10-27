@@ -11,17 +11,21 @@ public class PayrollFileCalculator {
 
 
         try {
-            System.out.println("Enter your employee profile: ");
-            String fileName = myScanner.nextLine();
 
-            BufferedWriter reader = new BufferedWriter(new FileWriter(fileName));
+            String fileName = myScanner.nextLine();
+            System.out.println("Enter the name of the file: ");
+            String writerFile = myScanner.nextLine();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(writerFile));
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+
             String line;
 
 
-            reader.newLine();
+            reader.readLine();
 
 
-            while ((line = reader.newLine()) != null) {
+            while ((line = reader.readLine()) != null) {
 
                 String[] tokens = line.split("\\|");
 
